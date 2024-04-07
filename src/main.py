@@ -1,5 +1,6 @@
 #%%
 # main.py
+
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -22,7 +23,6 @@ from ab_testing import exploracion_ab
 
 #%%
 
-
 if __name__ == "__main__":
     
     # FASE 1: EDA (Exploratory Data Analysis)
@@ -42,20 +42,20 @@ if __name__ == "__main__":
     
     # Realizar análisis exploratorio del dataframe combinado
     exploracion.exploracion_dataframe(df_merge, "Education")
-    #%%
+
     # Imputar valores nulos en la columna "Salary" utilizando la mediana
     exploracion.imputar_valores_nulos(df_merge, "Salary")
     
     # Analizar frecuencia de cancelaciones según los meses y los años
     exploracion.analisis_frecuencia_cancelaciones(df_merge, [["Cancellation Month", "Cancellation Year"]])
-    #%%
+    
     # Eliminar columnas no necesarias
     columnas_eliminar = ["Country", "Cancellation Month", "Cancellation Year"]
     exploracion.eliminar_columnas(df_merge, columnas_eliminar)
-    #%%
+ 
     # Transformar nombres de columnas para tener un formato uniforme
     exploracion.transformar_nombres_columnas(df_merge)
-    #%%
+   
     # Aplicar una transformación a la columna "Salary"
     df_merge["salary"] = df_merge["salary"].apply(exploracion.transformar_salary)
 
@@ -71,14 +71,20 @@ if __name__ == "__main__":
 
     # Llamadas a las funciones de visualización con el dataframe como argumento
     visualizacion.scatterplot_vuelos_por_mes_anio(df_merge)
+    
     visualizacion.boxplot_relacion_distancia_puntos(df_merge)
+    
     visualizacion.violinplot_distancia_puntos(df_merge)
+    
     visualizacion.bar_clientes_provincia(df_merge)
+    
     visualizacion.barplot_educacion_salary(df_merge)
+    
     visualizacion.fidelidad_clientes(df_merge)
+    
     visualizacion.gender_marital(df_merge)
     
-    
+#%%
     # FASE 3: A/B TESTING
 
     # Aquí debes cargar tu dataframe o importarlo desde donde se encuentre
@@ -88,4 +94,3 @@ if __name__ == "__main__":
     exploracion_ab(df_merge)
 
 
-# %%

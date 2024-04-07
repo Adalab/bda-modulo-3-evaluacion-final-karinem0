@@ -1,5 +1,5 @@
 #%%
-## FASE 2: VISUALIZACIÓN DE DATOS
+
 # visualizacion.py
 import pandas as pd
 import seaborn as sns

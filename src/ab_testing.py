@@ -1,12 +1,13 @@
 #%%
+
+# ab_testing.py
 import pandas as pd
 from scipy.stats import f_oneway, chi2_contingency
 from scipy.stats import kendalltau
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# ab_testing.py
-# FASE 3: A/B TESTING
+
 def exploracion_ab(df):
     """
         Realiza un análisis A/B Testing que incluye:
