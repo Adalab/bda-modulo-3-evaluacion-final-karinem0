@@ -142,11 +142,9 @@ def analisis_frecuencia_cancelaciones(dataframe, columnas):
     - dataframe (DataFrame): El DataFrame en el que se realizará el análisis.
     - columnas (list): La lista de nombres de las columnas a analizar.
     """
-    for columna in columnas:  
-        valores_unicos = dataframe[columna].unique()
-        frecuencia_valores = dataframe[columna].value_counts()
-        
-        print(f"La frecuencia de cancelaciones según los meses es:\n {frecuencia_valores}")
-        print(f"La frecuencia de cancelaciones según los años es:\n {frecuencia_valores}")
-        
+    for columnas_analizar in columnas:
+        for columna in columnas_analizar:
+            frecuencia_valores = dataframe[columna].value_counts()
+            print(f"La frecuencia de cancelaciones para la columna '{columna}' es:\n {frecuencia_valores}")
+
 # %%
